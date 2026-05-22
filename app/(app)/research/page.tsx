@@ -51,7 +51,7 @@ export default function ResearchPage() {
     load()
   }, [])
 
-  const categories = [...new Set(questions.map(q => q.category))]
+  const categories = Array.from(new Set(questions.map(q => q.category)))
   const maxCount = themes[0]?.count ?? 1
 
   if (loading) {
